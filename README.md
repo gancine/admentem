@@ -1,1 +1,231 @@
-# admentem
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ad Mentem</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background-color: #eadcc8;
+            color: #3a2418;
+            font-family: Georgia, "Times New Roman", serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 100vh;
+            min-height: 100svh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            height: 100vh;
+            height: 100svh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px 20px;
+        }
+
+        /* LOGO */
+        .logo {
+            width: min(75vw, 430px);
+            max-height: 42vh;
+            object-fit: contain;
+
+            display: block;
+            margin-bottom: 35px;
+        }
+
+        /* ÁREA DOS BOTÕES */
+        .buttons {
+            width: 100%;
+            max-width: 430px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .button {
+            width: 100%;
+            min-height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+            text-align: center;
+
+            background-color: #3a2418;
+            color: #eadcc8;
+
+            border: 2px solid #3a2418;
+            border-radius: 12px;
+
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 0.3px;
+
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: transparent;
+            color: #3a2418;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 15px rgba(58, 36, 24, 0.12);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        /* BOTÃO EM BREVE */
+        .button.disabled {
+            background-color: transparent;
+            color: #3a2418;
+            cursor: default;
+            opacity: 0.65;
+        }
+
+        .button.disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* CELULAR */
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 25px 20px;
+            }
+
+            .logo {
+                width: min(80vw, 350px);
+                max-height: 36vh;
+                margin-bottom: 30px;
+            }
+
+            .buttons {
+                max-width: 360px;
+                gap: 12px;
+            }
+
+            .button {
+                min-height: 54px;
+                font-size: 16px;
+                border-radius: 10px;
+            }
+        }
+
+        /* CELULARES MUITO PEQUENOS */
+        @media (max-height: 650px) {
+
+            .container {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                width: min(60vw, 260px);
+                max-height: 30vh;
+                margin-bottom: 20px;
+            }
+
+            .buttons {
+                gap: 8px;
+            }
+
+            .button {
+                min-height: 46px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- LOGO -->
+        <img
+            src="ad mentem.png.jpg"
+            alt="Ad Mentem"
+            class="logo"
+        >
+
+        <!-- BOTÕES -->
+        <nav class="buttons" aria-label="Ferramentas Ad Mentem">
+
+            <a
+                href="https://calc-copilot.lovable.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button"
+            >
+                Dr. Calc Helper
+            </a>
+
+            <a
+                href="https://calculadoradeitcmdsc.lovable.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button"
+            >
+                Calculadora ITCMD Sul
+            </a>
+
+            <a
+                href="https://acordofacil.lovable.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button"
+            >
+                Acordo Fácil
+            </a>
+
+            <a
+                href="#"
+                class="button disabled"
+                aria-disabled="true"
+                onclick="return false;"
+            >
+                Em breve
+            </a>
+
+        </nav>
+
+    </main>
+
+</body>
+</html>
