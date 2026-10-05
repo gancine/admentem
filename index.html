@@ -1,45 +1,62 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-
-    <!-- Responsividade -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ad Mentem</title>
 
     <style>
+        /* ==============================
+           RESET
+        ============================== */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+
+        /* ==============================
+           ESTRUTURA GERAL
+        ============================== */
+
         html,
         body {
             width: 100%;
-            height: 100%;
-            overflow: hidden;
+            min-height: 100%;
         }
 
         body {
+            min-height: 100vh;
+            min-height: 100svh;
+
             background-color: #eadcc8;
             color: #3a2418;
+
             font-family: Georgia, "Times New Roman", serif;
 
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
 
-            min-height: 100vh;
-            min-height: 100svh;
+            overflow-x: hidden;
         }
+
+
+        /* ==============================
+           CONTEÚDO PRINCIPAL
+        ============================== */
 
         .container {
             width: 100%;
             max-width: 700px;
-            height: 100vh;
-            height: 100svh;
+
+            flex: 1;
+
+            margin: 0 auto;
 
             display: flex;
             flex-direction: column;
@@ -49,23 +66,34 @@
             padding: 30px 20px;
         }
 
-        /* LOGO */
+
+        /* ==============================
+           LOGO
+        ============================== */
+
         .logo {
+            display: block;
+
             width: min(75vw, 430px);
             max-height: 42vh;
+
             object-fit: contain;
 
-            display: block;
             margin-bottom: 35px;
         }
 
-        /* ÁREA DOS BOTÕES */
+
+        /* ==============================
+           BOTÕES
+        ============================== */
+
         .buttons {
             width: 100%;
             max-width: 430px;
 
             display: flex;
             flex-direction: column;
+
             gap: 14px;
         }
 
@@ -77,14 +105,16 @@
             align-items: center;
             justify-content: center;
 
-            text-decoration: none;
-            text-align: center;
+            padding: 10px 16px;
+
+            border: 2px solid #3a2418;
+            border-radius: 12px;
 
             background-color: #3a2418;
             color: #eadcc8;
 
-            border: 2px solid #3a2418;
-            border-radius: 12px;
+            text-decoration: none;
+            text-align: center;
 
             font-size: 18px;
             font-weight: bold;
@@ -110,12 +140,18 @@
             transform: translateY(0);
         }
 
-        /* BOTÃO EM BREVE */
+
+        /* ==============================
+           BOTÃO "EM BREVE"
+        ============================== */
+
         .button.disabled {
             background-color: transparent;
             color: #3a2418;
-            cursor: default;
+
             opacity: 0.65;
+
+            cursor: default;
         }
 
         .button.disabled:hover {
@@ -123,7 +159,46 @@
             box-shadow: none;
         }
 
-        /* CELULAR */
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            width: 100%;
+
+            padding: 18px 20px 22px;
+
+            text-align: center;
+
+            color: #3a2418;
+
+            font-size: 13px;
+            line-height: 1.6;
+
+            opacity: 0.8;
+        }
+
+        footer div + div {
+            margin-top: 3px;
+        }
+
+        footer a {
+            color: inherit;
+
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ==============================
+           CELULAR
+        ============================== */
+
         @media (max-width: 600px) {
 
             .container {
@@ -133,6 +208,7 @@
             .logo {
                 width: min(80vw, 350px);
                 max-height: 36vh;
+
                 margin-bottom: 30px;
             }
 
@@ -143,12 +219,24 @@
 
             .button {
                 min-height: 54px;
+
                 font-size: 16px;
+
                 border-radius: 10px;
+            }
+
+            footer {
+                padding: 15px 15px 18px;
+
+                font-size: 12px;
             }
         }
 
-        /* CELULARES MUITO PEQUENOS */
+
+        /* ==============================
+           CELULARES MUITO PEQUENOS
+        ============================== */
+
         @media (max-height: 650px) {
 
             .container {
@@ -158,6 +246,7 @@
             .logo {
                 width: min(60vw, 260px);
                 max-height: 30vh;
+
                 margin-bottom: 20px;
             }
 
@@ -167,14 +256,22 @@
 
             .button {
                 min-height: 46px;
+
                 font-size: 15px;
+            }
+
+            footer {
+                padding-top: 10px;
+                padding-bottom: 12px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="container">
 
         <!-- LOGO -->
@@ -184,8 +281,12 @@
             class="logo"
         >
 
+
         <!-- BOTÕES -->
-        <nav class="buttons" aria-label="Ferramentas Ad Mentem">
+        <nav
+            class="buttons"
+            aria-label="Ferramentas Ad Mentem"
+        >
 
             <a
                 href="https://calc-copilot.lovable.app"
@@ -196,6 +297,7 @@
                 Dr. Calc Helper
             </a>
 
+
             <a
                 href="https://calculadoradeitcmdsc.lovable.app"
                 target="_blank"
@@ -205,6 +307,7 @@
                 Calculadora ITCMD Sul
             </a>
 
+
             <a
                 href="https://acordofacil.lovable.app"
                 target="_blank"
@@ -213,6 +316,7 @@
             >
                 Acordo Fácil
             </a>
+
 
             <a
                 href="#"
@@ -227,5 +331,36 @@
 
     </main>
 
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <div>
+            © 2026 Gancine.
+            Todos os direitos reservados.
+        </div>
+
+        <div>
+            Arthur Gancine ·
+            Estudante de Direito ·
+
+            <a
+                href="https://instagram.com/arthurgancine"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                IG: @arthurgancine
+            </a>
+
+            ·
+
+            <a href="mailto:contatogancine@gmail.com">
+                e-mail: contatogancine@gmail.com
+            </a>
+        </div>
+
+    </footer>
+
 </body>
+
 </html>
